@@ -1,30 +1,48 @@
 banco_de_dados = []
+banco_de_dados_animal = []
 
 def cadastrar_usuario(nome, idade):
     novo_usuario = {
         "nome": nome,
-        "idade": idade,
+        "idade": idade
     }
     banco_de_dados.append(novo_usuario)
     print(f"\n {nome} cadastrado com sucesso!\n")
 
-# Loop principal de interação
+def cadastrar_animal(nome_animal, idade_animal, raca):
+    novo_animal = {
+        "nome":nome_animal,
+        "idade":idade_animal,
+        "raça":raca
+    }
+    banco_de_dados_animal.append(novo_animal)
+    print(f"\n {nome_animal} cadastrado com sucesso!\n")
+
 while True:
     print("--- MENU DE CADASTRO ---")
     print("1. Cadastrar novo usuário")
-    print("2. Sair")
+    print('2. Cadastrar novo animal ')
+    print("3. Sair")
     
-    opcao = input("Escolha uma opção (1/2): ")
+    opcao = input("Escolha uma opção (1/2/3): ")
 
     if opcao == "1":
         # Coleta os dados do usuário pelo teclado
-        nome_input = input("Digite o nome: ")
-        idade_input = input("Digite a idade: ")
+        nome = input("Digite o nome: ")
+        idade = input("Digite a idade: ")
         
         # Envia os dados para a função
-        cadastrar_usuario(nome_input, idade_input)
-        
+        cadastrar_usuario(nome, idade)
+
     elif opcao == "2":
+        # Coleta os dados do usuário pelo teclado
+        nome_animal = input("Digite o nome do animal: ")
+        idade_animal = input("Digite a idade do animal: ")
+        raca_animal = input("Digite a raça do animal: ")
+        
+        cadastrar_animal(nome_animal, idade_animal, raca_animal)
+        
+    elif opcao == "3":
         print("Saindo do sistema... Até logo!")
         exit()
     else:
