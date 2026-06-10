@@ -1,4 +1,5 @@
 banco_de_dados = []
+cachorros = []
 
 def cadastrar_pet(nome, idade, raca, situacao ):
     novo_pet = {
@@ -20,8 +21,11 @@ while True:
 
     if opcao == "1":
         # Coleta os dados do usuário pelo teclado
-        nome_input = input("Digite o nome: ")
-        idade_input = input("Digite a idade: ")
+        for i in cachorros:
+            nome_input = input("Digite o nome: ")
+            cachorros.append(nome_input)
+        # Socorro
+        idade_input = int(input("Digite a idade: "))
         raca_input = input ("Digite a raça de seu animal: ")
         situacao_input= input("Digite qual o estado que se animal está: ")
         
@@ -33,5 +37,4 @@ while True:
         exit()
     else:
         print("\n Opção inválida! Tente novamente.\n")
-
         
